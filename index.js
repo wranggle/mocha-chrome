@@ -19,7 +19,7 @@ class MochaChrome {
   constructor (options) {
     options = deepAssign({
       chromeFlags: [],
-      loadTimeout: 1000,
+      loadTimeout: 10000,
       logLevel: 'error',
       ignoreExceptions: false,
       ignoreConsole: false,
@@ -116,7 +116,6 @@ class MochaChrome {
         this.fail('Failed to load the page. Check the url: ' + this.options.url);
         return;
       }
-
       setTimeout(async () => {
         if (this.closed) {
           return;
